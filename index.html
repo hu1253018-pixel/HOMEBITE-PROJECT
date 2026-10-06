@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HomeBite - Homemade Food Marketplace</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🍱 HomeBite
+            </div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#foods">Food</a>
+                <a href="#cooks">Home Cooks</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#about">About</a>
+
+                <button class="cart-button" onclick="openCart()">
+                    🛒 Cart
+                    <span id="cart-count">0</span>
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Homemade Food,
+                <span>Made With Love ❤️</span>
+            </h1>
+
+            <p>
+                Discover delicious homemade meals prepared by talented
+                home cooks in your community.
+            </p>
+
+            <a href="#foods" class="hero-button">
+                🍽️ Explore Food
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-section">
+
+        <h2>🔎 Find Your Favourite Food</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search food..."
+            onkeyup="searchFood()"
+        >
+
+        <select id="categoryFilter" onchange="filterFood()">
+
+            <option value="all">All Categories</option>
+            <option value="indian">Indian</option>
+            <option value="chinese">Chinese</option>
+            <option value="italian">Italian</option>
+            <option value="snacks">Snacks</option>
+            <option value="dessert">Desserts</option>
+
+        </select>
+
+    </section>
+
+
+    <!-- ================= FOOD ================= -->
+
+    <section id="foods" class="section">
+
+        <h2 class="section-title">
+            🍴 Homemade Food
+        </h2>
+
+        <p class="section-subtitle">
+            Freshly prepared by our talented home chefs
+        </p>
+
+
+        <div class="food-grid" id="foodGrid">
+
+
+            <!-- FOOD 1 -->
+
+            <div class="food-card" data-category="indian">
+
+                <div class="food-image">
+                    🍛
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Dal Tadka</h3>
+
+                    <p>
+                        Delicious homemade dal with traditional spices.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹120</strong>
+
+                        <button onclick="addToCart(1)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 2 -->
+
+            <div class="food-card" data-category="indian">
+
+                <div class="food-image">
+                    🧀
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Paneer Butter Masala</h3>
+
+                    <p>
+                        Creamy paneer cooked in rich buttery gravy.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹180</strong>
+
+                        <button onclick="addToCart(2)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 3 -->
+
+            <div class="food-card" data-category="indian">
+
+                <div class="food-image">
+                    🍲
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Shahi Paneer</h3>
+
+                    <p>
+                        Royal creamy paneer with aromatic spices.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹190</strong>
+
+                        <button onclick="addToCart(3)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 4 -->
+
+            <div class="food-card" data-category="indian">
+
+                <div class="food-image">
+                    🍚
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Veg Biryani</h3>
+
+                    <p>
+                        Fragrant rice cooked with vegetables and spices.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹160</strong>
+
+                        <button onclick="addToCart(4)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👩‍🍳 Priya's Kitchen
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 5 -->
+
+            <div class="food-card" data-category="indian">
+
+                <div class="food-image">
+                    🫘
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Rajma Chawal</h3>
+
+                    <p>
+                        Comforting rajma served with steamed rice.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹130</strong>
+
+                        <button onclick="addToCart(5)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👩‍🍳 Priya's Kitchen
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 6 -->
+
+            <div class="food-card" data-category="indian">
+
+                <div class="food-image">
+                    🥘
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Chole Bhature</h3>
+
+                    <p>
+                        Spicy chickpeas served with fluffy bhature.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹150</strong>
+
+                        <button onclick="addToCart(6)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👩‍🍳 Meera's Kitchen
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 7 -->
+
+            <div class="food-card" data-category="indian">
+
+                <div class="food-image">
+                    🫓
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Aloo Paratha</h3>
+
+                    <p>
+                        Homemade stuffed paratha served with curd.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹80</strong>
+
+                        <button onclick="addToCart(7)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 8 -->
+
+            <div class="food-card" data-category="indian">
+
+                <div class="food-image">
+                    🥞
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Masala Dosa</h3>
+
+                    <p>
+                        Crispy dosa filled with delicious potato masala.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹100</strong>
+
+                        <button onclick="addToCart(8)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👩‍🍳 Meera's Kitchen
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 9 -->
+
+            <div class="food-card" data-category="snacks">
+
+                <div class="food-image">
+                    🥟
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Homemade Samosa</h3>
+
+                    <p>
+                        Crispy samosas filled with spicy potato stuffing.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹40</strong>
+
+                        <button onclick="addToCart(9)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 10 -->
+
+            <div class="food-card" data-category="snacks">
+
+                <div class="food-image">
+                    🧀
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Paneer Tikka</h3>
+
+                    <p>
+                        Grilled paneer marinated with Indian spices.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹160</strong>
+
+                        <button onclick="addToCart(10)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 11 -->
+
+            <div class="food-card" data-category="dessert">
+
+                <div class="food-image">
+                    🍩
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Gulab Jamun</h3>
+
+                    <p>
+                        Soft sweet dumplings soaked in sugar syrup.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹70</strong>
+
+                        <button onclick="addToCart(11)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 12 -->
+
+            <div class="food-card" data-category="dessert">
+
+                <div class="food-image">
+                    🍮
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Kheer</h3>
+
+                    <p>
+                        Traditional creamy rice pudding with dry fruits.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹90</strong>
+
+                        <button onclick="addToCart(12)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👩‍🍳 Priya's Kitchen
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 13 -->
+
+            <div class="food-card" data-category="chinese">
+
+                <div class="food-image">
+                    🍜
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Veg Hakka Noodles</h3>
+
+                    <p>
+                        Stir-fried noodles with fresh vegetables.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹140</strong>
+
+                        <button onclick="addToCart(13)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 14 -->
+
+            <div class="food-card" data-category="chinese">
+
+                <div class="food-image">
+                    🍚
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Veg Fried Rice</h3>
+
+                    <p>
+                        Flavourful fried rice with fresh vegetables.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹130</strong>
+
+                        <button onclick="addToCart(14)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 15 -->
+
+            <div class="food-card" data-category="italian">
+
+                <div class="food-image">
+                    🍕
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Homemade Pizza</h3>
+
+                    <p>
+                        Cheesy homemade pizza with fresh toppings.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹220</strong>
+
+                        <button onclick="addToCart(15)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 16 -->
+
+            <div class="food-card" data-category="italian">
+
+                <div class="food-image">
+                    🍝
+                </div>
+
+                <div class="food-info">
+
+                    <h3>White Sauce Pasta</h3>
+
+                    <p>
+                        Creamy pasta prepared with herbs and cheese.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹180</strong>
+
+                        <button onclick="addToCart(16)">
+                            Add 🛒
+                        </button>
+
+                    </div>
+
+                    <small>
+                        👨‍🍳 Kunwar Saa
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HOME COOKS ================= -->
+
+    <section id="cooks" class="section cooks-section">
+
+        <h2 class="section-title">
+            👨‍🍳 Meet Our Home Cooks
+        </h2>
+
+        <p class="section-subtitle">
+            Talented people cooking delicious food from their homes
+        </p>
+
+
+        <div class="cook-grid">
+
+
+            <!-- KUNWAR SAA -->
+
+            <div class="cook-card featured-cook">
+
+                <div class="cook-avatar">
+                    👨🏻‍🍳
+                </div>
+
+                <h3>
+                    Kunwar Saa
+                </h3>
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <h4>
+                    ⭐ 5.0 / 5.0
+                </h4>
+
+                <p class="cook-speciality">
+                    🍽️ Multi-Specialist Home Chef
+                </p>
+
+                <p>
+                    A 5-star home chef who can prepare
+                    almost everything — from traditional
+                    Indian meals to Chinese, Italian,
+                    snacks, desserts and much more.
+                </p>
+
+                <div class="chef-skills">
+
+                    <span>🍛 Indian</span>
+                    <span>🥡 Chinese</span>
+                    <span>🍕 Italian</span>
+                    <span>🍔 Fast Food</span>
+                    <span>🥗 Veg</span>
+                    <span>🍗 Non-Veg</span>
+                    <span>🍰 Desserts</span>
+                    <span>🥘 Snacks</span>
+
+                </div>
+
+                <span class="verified">
+                    ✓ 5-Star Multi-Specialist Chef
+                </span>
+
+            </div>
+
+
+            <!-- PRIYA -->
+
+            <div class="cook-card">
+
+                <div class="cook-avatar">
+                    👩🏻‍🍳
+                </div>
+
+                <h3>
+                    Priya's Kitchen
+                </h3>
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p class="cook-speciality">
+                    🥗 Traditional Indian Food
+                </p>
+
+                <p>
+                    Specializes in delicious homemade
+                    Indian meals and traditional recipes.
+                </p>
+
+                <span class="verified">
+                    ✓ Verified Home Cook
+                </span>
+
+            </div>
+
+
+            <!-- MEERA -->
+
+            <div class="cook-card">
+
+                <div class="cook-avatar">
+                    👩🏽‍🍳
+                </div>
+
+                <h3>
+                    Meera's Kitchen
+                </h3>
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p class="cook-speciality">
+                    🥘 Indian Snacks & Breakfast
+                </p>
+
+                <p>
+                    Homemade breakfast, snacks and
+                    traditional Indian favourites.
+                </p>
+
+                <span class="verified">
+                    ✓ Verified Home Cook
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BECOME COOK ================= -->
+
+    <section class="join-section">
+
+        <div>
+
+            <h2>
+                👨‍🍳 Want to Become a Home Cook?
+            </h2>
+
+            <p>
+                Share your cooking skills with your community
+                and earn from your homemade food.
+            </p>
+
+            <button onclick="openCookForm()">
+                Become a Home Cook
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REVIEWS ================= -->
+
+    <section id="reviews" class="section">
+
+        <h2 class="section-title">
+            ⭐ Customer Reviews
+        </h2>
+
+        <div id="reviewList" class="review-grid">
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <h3>
+                    Rahul
+                </h3>
+
+                <p>
+                    "The food tasted just like homemade food.
+                    Absolutely delicious!"
+                </p>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <h3>
+                    Anjali
+                </h3>
+
+                <p>
+                    "Kunwar Saa's food was amazing!
+                    Everything was fresh and tasty."
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="review-form">
+
+            <h3>
+                Leave a Review
+            </h3>
+
+            <input
+                type="text"
+                id="reviewName"
+                placeholder="Your name"
+            >
+
+            <textarea
+                id="reviewText"
+                placeholder="Write your review..."
+            ></textarea>
+
+            <button onclick="addReview()">
+                Submit Review
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="section about-section">
+
+        <h2 class="section-title">
+            📖 About HomeBite
+        </h2>
+
+        <p>
+
+            HomeBite is a community-based homemade food
+            marketplace that connects talented home cooks
+            with customers looking for fresh and delicious
+            homemade meals.
+
+        </p>
+
+        <p>
+
+            Our goal is to help home cooks showcase their
+            cooking skills, reach more customers and create
+            an additional source of income.
+
+        </p>
+
+    </section>
+
+
+    <!-- ================= CART MODAL ================= -->
+
+    <div id="cartModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeCart()">
+                &times;
+            </span>
+
+            <h2>
+                🛒 Your Cart
+            </h2>
+
+            <div id="cartItems"></div>
+
+            <div class="cart-total">
+
+                <strong>
+                    Total:
+                </strong>
+
+                ₹<span id="cartTotal">0</span>
+
+            </div>
+
+            <button
+                class="checkout-button"
+                onclick="openCheckout()"
+            >
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= CHECKOUT MODAL ================= -->
+
+    <div id="checkoutModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeCheckout()">
+                &times;
+            </span>
+
+            <h2>
+                💳 Checkout
+            </h2>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your Name"
+            >
+
+            <input
+                type="text"
+                id="customerPhone"
+                placeholder="Phone Number"
+            >
+
+            <textarea
+                id="customerAddress"
+                placeholder="Delivery Address"
+            ></textarea>
+
+            <select id="paymentMethod">
+
+                <option>
+                    Cash on Delivery
+                </option>
+
+                <option>
+                    UPI
+                </option>
+
+                <option>
+                    Card
+                </option>
+
+            </select>
+
+            <button
+                class="checkout-button"
+                onclick="placeOrder()"
+            >
+                Place Order
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= COOK FORM ================= -->
+
+    <div id="cookModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeCookForm()">
+                &times;
+            </span>
+
+            <h2>
+                👨‍🍳 Become a Home Cook
+            </h2>
+
+            <input
+                type="text"
+                id="cookName"
+                placeholder="Your Name"
+            >
+
+            <input
+                type="text"
+                id="cookSpeciality"
+                placeholder="Your Speciality"
+            >
+
+            <textarea
+                id="cookDescription"
+                placeholder="Tell us about your cooking..."
+            ></textarea>
+
+            <button
+                class="checkout-button"
+                onclick="submitCookForm()"
+            >
+                Submit Application
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h2>
+            🍱 HomeBite
+        </h2>
+
+        <p>
+            Homemade food. Local cooks. Happy customers. ❤️
+        </p>
+
+        <p>
+            © 2026 HomeBite. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
